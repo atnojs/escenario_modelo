@@ -1,0 +1,183 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Composición Escenario</title>
+  <link rel="icon" href="https://atnojs.es/imagenes/favicon_negro1.ico" type="image/x-icon">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="app.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Crea Composiciones Impactantes con IA</h1>
+      <!-- <p class="subtitle">Crea composiciones visuales impactantes con IA</p> -->
+    </header>
+
+    <section class="upload-section">
+      <div class="upload-box" id="scenario-box">
+        <span class="icon" aria-hidden="true">🌆</span>
+        <h3>Escenario</h3>
+        <p>Añade el fondo de la imagen</p>
+        <div class="preview-container">
+          <img class="preview-image" id="scenario-preview" alt="Vista previa del escenario">
+        </div>
+      </div>
+
+      <div class="upload-box" id="model-box">
+        <span class="icon" aria-hidden="true">👤</span>
+        <h3>Modelo</h3>
+        <p>Añade el/la modelo</p>
+        <div class="preview-container">
+          <img class="preview-image" id="model-preview" alt="Vista previa del modelo">
+        </div>
+      </div>
+
+      <div class="upload-box" id="clothing-box">
+        <span class="icon" aria-hidden="true">👕</span>
+        <h3>Prenda de ropa</h3>
+        <p>Añade la prenda</p>
+        <div class="preview-container">
+          <img class="preview-image" id="clothing-preview" alt="Vista previa de la prenda">
+        </div>
+      </div>
+
+      <div class="upload-box" id="accessory-box">
+        <span class="icon" aria-hidden="true">👜</span>
+        <h3>Complemento</h3>
+        <p>Añade el complemento</p>
+        <div class="preview-container">
+          <img class="preview-image" id="accessory-preview" alt="Vista previa del complemento">
+        </div>
+      </div>
+    </section>
+
+    <section class="style-selector">
+      <h2>Selecciona un estilo fotográfico</h2>
+      <div class="selectors-grid single-selector">
+        <div class="select-group">
+          <label for="style-select" class="visually-hidden">Estilo fotográfico</label>
+          <select id="style-select">
+            <option value="">-- Selecciona un estilo --</option>
+            <option value="cinematic">Cinemático (Estilo Película)</option>
+            <option value="high-key">High-Key (Luminoso y Optimista)</option>
+            <option value="low-key">Low-Key (Clarooscuro Dramático)</option>
+            <option value="street-style">Street Style (Urbano y Desenfocado)</option>
+            <option value="minimalist">Minimalista y Conceptual</option>
+            <option value="surreal">Surrealista y Onírico</option>
+            <option value="grunge">Grunge y Raw (Estética Cruda)</option>
+            <option value="vintage">Fotografía analógica Vintage</option>
+            <option value="bw">Blanco y Negro de Alto Contraste</option>
+            <option value="pastel">Tonos Pastel y Ensueño</option>
+            <option value="cyberpunk">Estética Futurista / Ciberpunk</option>
+            <option value="baroque">Barroco / Pictórico</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUEVO: 3 desplegables por similitud -->
+    <section class="composition-selectors-3">
+      <h2>Selecciona las composiciones (máximo 3 en total)</h2>
+      <div class="selectors-grid">
+        <div class="select-group">
+          <label for="comp-select-a">Producto y realistas</label>
+          <select id="comp-select-a">
+            <option value="">Elige alguna opción</option>
+          </select>
+        </div>
+        <div class="select-group">
+          <label for="comp-select-b">Cine y dirección de arte</label>
+          <select id="comp-select-b">
+            <option value="">Elige alguna opción</option>
+          </select>
+        </div>
+        <div class="select-group">
+          <label for="comp-select-c">Conceptual y gráfico</label>
+          <select id="comp-select-c">
+            <option value="">Elige alguna opción</option>
+          </select>
+        </div>
+        <div class="select-status">
+          <span id="selection-info">Seleccionados: 0/3</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="composition-selector">
+      <h2>Selecciona los tipos de composición (máximo 2)</h2>
+      <div class="composition-options">
+        <div class="composition-option" data-type="artistic">
+          <h3>Composición Artística Publicitaria</h3>
+          <p>Una imagen con composición artística e intención publicitaria.</p>
+        </div>
+        <div class="composition-option" data-type="expositive">
+          <h3>Composición Expositiva</h3>
+          <p>Una imagen más ordenada que permite identificar claramente los elementos.</p>
+        </div>
+        <div class="composition-option" data-type="social">
+          <h3>Publicación para Redes Sociales</h3>
+          <p>Formato vertical 9:16 optimizado para Instagram, TikTok, etc.</p>
+        </div>
+        <div class="composition-option" data-type="product">
+          <h3>Bodegón de Producto (Flat Lay)</h3>
+          <p>Enfoque en los productos sin distracciones del modelo.</p>
+        </div>
+        <div class="composition-option" data-type="behind">
+          <h3>Estilo "Entre Bastidores"</h3>
+          <p>Una toma cándida que muestra un momento natural durante la sesión.</p>
+        </div>
+        <div class="composition-option" data-type="banner">
+          <h3>Banner Publicitario Horizontal</h3>
+          <p>Formato panorámico con espacio para logo y eslogan.</p>
+        </div>
+      </div>
+      <p class="selection-info" id="selection-info-legacy" aria-hidden="true">Seleccionados: 0/2</p>
+    </section>
+
+    <button class="generate-btn" id="generate-btn" disabled>Generar Imágenes</button>
+
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Generando tus imágenes. Esto puede tardar unos segundos...</p>
+    </div>
+
+    <section class="results-section" id="results-section">
+      <h2>Resultados de la Composición</h2>
+      <div class="results-grid" id="results-grid"></div>
+      <button class="download-all" id="download-all">Descargar Todas las Imágenes (ZIP)</button>
+      <button class="new-composition" id="new-composition">Crear Nueva Composición</button>
+    </section>
+
+    <footer>
+      <p>Atnojs © 2025 - Todos los derechos reservados</p>
+    </footer>
+  </div>
+
+  <input type="file" id="file-input" accept="image/*" hidden>
+
+  <div id="image-modal" class="modal">
+    <span class="modal-close" aria-label="Cerrar modal">&times;</span>
+    <img class="modal-content" id="modal-image" alt="">
+  </div>
+
+  <!-- Iconos Feather -->
+  <script src="https://unpkg.com/feather-icons"></script>
+  <!-- Librerías JS -->
+  <script src="https://unpkg.com/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="app.js"></script>
+  <!-- Inicializar iconos -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      feather.replace();
+    });
+  </script>
+</body>
+</html>
