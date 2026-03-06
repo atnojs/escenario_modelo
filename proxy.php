@@ -20,7 +20,7 @@ $API_BASE = 'https://generativelanguage.googleapis.com/v1beta';
 // CAMBIO IMPORTANTE: 'gemini-3-pro' no existe públicamente aún. 
 // Usamos 'gemini-2.0-flash-exp' que es el actual capaz de generar imágenes via API rápida,
 // o 'gemini-1.5-pro' si solo fuera texto. Para generación de imágenes, prueba este:
-$DEFAULT_MODEL = 'gemini-3-pro-image-preview'; 
+$DEFAULT_MODEL = 'gemini-3.1-flash-image-preview'; 
 
 $ALLOWED_MIME = ['image/jpeg','image/png','image/webp', 'image/heic'];
 $MAX_MB = 20; 
